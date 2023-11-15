@@ -9,15 +9,16 @@ const Signalspost = ({
 	signal_type,
 }) => {
 	return (
-		<div className="w-[70%]  mx-auto  mb-6  flex bg-white   shadow-xl rounded-lg overflow-hidden hover:shadow-2xl">
+		<div className="w-[45%]  mx-auto  mb-6  flex bg-white   shadow-xl rounded-lg overflow-hidden hover:shadow-2xl">
 			<div className="w-full">
-				<div
-					className=" py-2"
-					style={{
-						backgroundColor:
-							signal_type === 'Long' ? '#28a745' : '#dc3545',
-					}}
-				>
+				<div className=" py-2 bg-slate-900 flex items-center pl-5">
+					<span
+						className="w-5 h-5 rounded-[50%] block mr-2"
+						style={{
+							backgroundColor:
+								signal_type === 'Long' ? '#28a745' : '#dc3545',
+						}}
+					/>
 					<h2 className="font-bold text-lg text-center text-white ">
 						{coin_name}
 					</h2>

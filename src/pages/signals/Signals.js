@@ -20,14 +20,16 @@ const Signals = () => {
 	}, []);
 
 	return (
-		<div className="rounded shadow p-4 pt-8 m-4">
+		<div className="pt-7">
 			<h1 className="text-3xl text-center mb-10 font-bold">Signals</h1>
-			{loading ? (
-				// <div className="bg-red-400 ">
-				<Loader />
-			) : (
-				signals.map((item, index) => <Signalspost {...item} />)
-			)}
+			<div className="rounded shadow p-4 pt-8 m-4 flex flex-wrap w-[80%] mx-auto ">
+				{loading ? (
+					// <div className="bg-red-400 ">
+					<Loader />
+				) : (
+					signals.map((item, index) => <Signalspost {...item} />)
+				)}
+			</div>
 		</div>
 	);
 };

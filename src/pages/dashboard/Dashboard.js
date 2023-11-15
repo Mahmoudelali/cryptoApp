@@ -68,7 +68,7 @@ const Coins = (props) => {
 							{tableHeaders.map((title, index) => (
 								<td
 									key={index}
-									className="py-3 px-7 font-bold tracking-wide"
+									className="py-3 px-7 font-bold tracking-wide "
 								>
 									{title.toUpperCase()}
 								</td>
@@ -81,7 +81,7 @@ const Coins = (props) => {
 								return (
 									<tr
 										key={id}
-										className=" font-semibold py-3 px-8  mb-2 text-center bg-white hover:bg-slate-800 hover:text-white  transition-none duration-150   shadow-md"
+										className=" font-semibold py-3 px-8  mb-2 text-center bg-white hover:bg-slate-800 hover:text-white  transition-all duration-200 shadow-md"
 									>
 										<td className="py-4">#{index}</td>
 										<td>
@@ -111,7 +111,7 @@ const Coins = (props) => {
 											onClick={() => handleAddFavCoin(id)}
 										>
 											<button value={id}>
-												{isFav ? (
+												{!isFav ? (
 													<AiOutlineHeart
 														style={{
 															fontSize: '30px',

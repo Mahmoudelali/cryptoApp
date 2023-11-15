@@ -8,15 +8,12 @@ const News = () => {
 	const [loading, setLoading] = useState(true);
 	const uri = 'http://127.0.0.1:8000/api/news';
 
-	console.log('resdered');
 	useEffect(() => {
 		axios
 			.get(uri)
 			.then((res) => {
-				setTimeout(() => {
-					setNews(res.data);
-					setLoading(false);
-				}, 2000);
+				setNews(res.data);
+				setLoading(false);
 			})
 			.catch((err) => console.log('error', err.message));
 	}, []);
@@ -31,14 +28,18 @@ const News = () => {
 				<Loader />
 			) : (
 				// </div>
-				news.map(({ title, content, image, id }, index) => (
-					<BlogPost
-						title={title}
-						key={id}
-						content={content}
-						image={image}
-					/>
-				))
+				news.map(({ title, content, image, id }) => {
+					console.log(image);
+					return (
+						<BlogPost
+							id={id}
+							title={title}
+							key={id}
+							content={content}
+							image={image}
+						/>
+					);
+				})
 			)}
 		</div>
 	);

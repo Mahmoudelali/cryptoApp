@@ -8,20 +8,45 @@ import Rumors from './pages/rumors/Rumors.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './pages/dashboard/navbar.js';
+import Login from './pages/Login/Login.js';
+import { useCookies } from 'react-cookie';
+import SingleNews from './components/SingleNews.js';
 
 function App() {
-	useEffect(() => {}, []);
+	const [cookies] = useCookies(['user']);
+	
+	console.log(cookies.user);
+
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route path="/" element={<Navigate to="/dashboard" />} />
-					<Route path="/dashboard" element={<Dashboard />} />
-					<Route path="/news" element={<News />} />
-					<Route path="/favorite-coin" element={<FavoriteCoin />} />
-					<Route path="/signals" element={<Signals />} />
-					<Route path="/rumors" element={<Rumors />} />
-				</Route>
+				{cookies.user ? (
+					<Route path="/" element={<Layout />}>
+						<Route
+							path="*"
+							element={<Navigate to="/dashboard" />}
+						/>
+						<Route
+							path="/"
+							element={<Navigate to="/dashboard" />}
+						/>
+						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/news" element={<News />} />
+
+						<Route path="/news/:id" element={<SingleNews />} />
+						<Route
+							path="/favorite-coin"
+							element={<FavoriteCoin />}
+						/>
+						<Route path="/signals" element={<Signals />} />
+						<Route path="/rumors" element={<Rumors />} />
+					</Route>
+				) : (
+					<>
+						<Route path="/login" element={<Login />} />
+						<Route path="*" element={<Navigate to="/login" />} />
+					</>
+				)}
 			</Routes>
 		</BrowserRouter>
 	);

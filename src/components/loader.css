@@ -51,3 +51,47 @@
 		transform: rotate(360deg);
 	}
 }
+
+/* Define scrollbar styles for Firefox */
+/* You can also add browser-specific styles for other browsers like Chrome, Safari, etc. */
+/* For brevity, this example focuses on Firefox */
+
+/* Track */
+::-moz-scrollbar {
+	width: 12px;
+}
+
+/* Handle */
+::-moz-scrollbar-thumb {
+	background-color: #3498db; /* Set the color of the scrollbar handle */
+	border-radius: 6px; /* Set the border radius to make it rounder */
+}
+
+/* Handle on hover */
+::-moz-scrollbar-thumb:hover {
+	background-color: #2980b9;
+}
+
+::-moz-scrollbar-track:hover {
+	background-color: #eee;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgb(15, 23, 42, 0.7);
+	border-radius: 6px;
+	transition: 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(15, 23, 42); /* Change the color on hover */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+	background-color: #eee;
+}

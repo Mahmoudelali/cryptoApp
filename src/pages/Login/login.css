@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+.form {
+	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.7px;
+}
+
+.form-container {
+	background-image: url('../../images/wp11734529-blockchain-technology-wallpapers.jpg');
+}
+input::placeholder {
+	font-size: 14px;
+	letter-spacing: 1px;
+}
