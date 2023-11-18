@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box !important;
+}
+
 .App {
 	text-align: center;
 }
@@ -40,6 +44,6 @@
 body {
 	background-color: #eee;
 }
-tr { 
-  border-radius: 10px !important;
+tr {
+	border-radius: 10px !important;
 }
