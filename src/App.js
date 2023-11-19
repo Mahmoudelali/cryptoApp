@@ -14,8 +14,6 @@ import SingleNews from './components/SingleNews.js';
 
 function App() {
 	const [cookies] = useCookies(['user']);
-	
-	console.log(cookies.user);
 
 	return (
 		<BrowserRouter>

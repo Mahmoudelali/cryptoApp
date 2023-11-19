@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from './Loader.js';
 import Comment from './comment.js';
+import userImage from '../images/user.png';
 
 const SingleNews = () => {
 	const [news, setNews] = useState(null);
@@ -56,12 +57,12 @@ const SingleNews = () => {
 						</h2>
 						<div className="h-[70%] overflow-y-scroll">
 							{news.comments.map((cmt) => {
-								console.log(cmt);
 								return (
 									<Comment
 										user_name={cmt.user.username.toUpperCase()}
 										content={cmt.comment_content}
 										key={cmt.id}
+										image={userImage}
 									/>
 								);
 							})}
